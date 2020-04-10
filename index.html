@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rekom Indonesia</title>
+	<link rel="icon" href="img/LOGO APLIKASI.png" type="image/png">
+
+  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendors/flat-icon/font/flaticon.css">
+  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-shape">
+
+  <!--================ Header Menu Area start =================-->
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo2.png" width="130px" height="30px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item active">
+                <a class="nav-link" data-scroll href="#beranda">Beranda
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li> 
+              <li class="nav-item"><a class="nav-link" data-scroll href="#tentang">Tentang</a></li> 
+              <li class="nav-item"><a class="nav-link" data-scroll href="#keuntungan">Keuntungan</a>
+              <li class="nav-item"><a class="nav-link" data-scroll href="#pelanggan">Pelanggan</a>
+            </ul>
+          </div> 
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--================Header Menu Area =================-->
+
+
+  <!--================Hero Banner Area Start =================-->
+  <section class="hero-banner magic-ball" id="beranda">
+    <div class="container">
+
+      <div class="row align-items-center text-center text-md-left">
+        <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+          <h2>Wadah yang tepat untuk mengembangkan UMKM Anda</h2>
+          <p>Bergabunglah dengan kami untuk meningkatkan penjualan Anda.</p>
+            <a class="button button-hero mt-4" data-toggle="modal" data-target="#modalSubscriptionForm" href="">Bergabung</a>
+        </div>
+        
+        <form onsubmit="postPhoneNumber()">
+          <div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h4 class="modal-title w-100 font-weight-bold">Ingin bersinergi berasama?</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-3">
+                  <div class="md-form mb-4">
+                    <label data-error="wrong" data-success="right" for="phone">Kirimkan nomor telepon Anda untuk menerima proposal partnership dari kami</label>
+                    <input type="text" id="no_telp" class="form-control validate">
+                  </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button class="button button-hero" type="submit">Kirim<i class="fas fa-paper-plane-o ml-1"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <script>
+            function postPhoneNumber() {
+              const phoneNumber = document.getElementById("no_telp").value;
+              const params = new URLSearchParams();
+              params.append('no_telp', phoneNumber);
+              axios({
+                method: 'post',
+                url: 'http://127.0.0.1:8000/api/pelanggan',
+                data: params
+              });
+            }
+        </script>
+
+        <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+          <img class="img-fluid" src="img/container1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================Hero Banner Area End =================-->
+
+
+  <!--================About Area Start =================-->
+  <section id="tentang"> 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-6 mb-4 mb-md-0">
+          <div class="about-img">
+            <img class="img-fluid" src="img/icon4.png" style="padding-left: 30px" alt="" width="600px" height="600px">
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 align-self-center about-content">
+          <h2>Platform penyedia jasa untuk UMKM</h2>
+          <p>Rekom Indoensia merupakan sebuah platform penyedia jasa bagi vendor yang bergerak di bidang UMKM. Mulai dari handmade, makanan, dan minuman.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================About Area End =================-->
+
+
+  <!--================Service Area Start =================-->
+  <section class="section-margin generic-margin" id="keuntungan">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <h2>Keuntungan Menggunakan Rekom</h2>
+        <p>Banyak hal yang diperoleh ketika bergabung dengan kami</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="img/icon1.png" alt="" width="250px" height="250px">
+            </div>
+            <div class="service-card-body">
+              <h3>Pembayaran Di Tempat</h3>
+              <p>Pembayaran dilakukan ketika produk diterima customer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="img/icon2.png" alt="" width="250px" height="250px">
+            </div>
+            <div class="service-card-body">
+              <h3>Mempermudah Penjualan</h3>
+              <p>Mempermudah customer memperoleh produk unggulan dan terpercaya</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="img/icon3.png" alt="" width="250px" height="250px">
+            </div>
+            <div class="service-card-body">
+              <h3>Realtime</h3>
+              <p>Pantau semua penjualan anda secara akurat dan tepat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================Service Area End =================-->
+
+
+  <!--================Blog section Start =================-->
+  <section class="section-padding bg-gray" id="pelanggan">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <h2>Pelanggan Kami</h2>
+        <p>UMKM yang terbantu dengan aplikasi Rekom</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="img/Delia1.jpeg" alt="">
+            <div class="card-blog-body">
+                <h4><center>Delia Craft</center></h4>
+              <p>Karunggoni merupakan salah satu bahan pokok dalam pembuatan variasi tas delia craft.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="img/Djamoe.jpeg" alt="">
+            <div class="card-blog-body">
+                <h4><center>Yunus Craft</center></h4>
+              <p>Karunggoni merupakan salah satu bahan pokok dalam pembuatan variasi tas delia craft.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="card-blog">
+            <img class="card-img rounded-0" src="img/Djamoe.jpeg" alt="">
+            <div class="card-blog-body">
+                <h4><center>Djamoe</center></h4>
+              <p>Djamoe adalah usaha yang bergerak dibidang kuliner khususnya minuman. Produk Djamoe meliputi: Beras Kencur, Temulawak dan Kunir Asem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--================Blog section End =================-->
+
+
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="section-intro text-center">
+          <p><font color="white">
+              &copy;Rekom Indonesia </font></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ================ End footer Area ================= -->
+
+
+  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/skrollr.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]', {
+      customEasing: function (time) {
+        return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time;
+      }
+    });
+  </script>
+
+</body>
+</html>
